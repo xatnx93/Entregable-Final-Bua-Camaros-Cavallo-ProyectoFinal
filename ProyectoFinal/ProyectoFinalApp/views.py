@@ -6,7 +6,7 @@ from ProyectoFinalApp.forms import *
 def inicio(request):
     return render(
         request,
-        r"C:\Users\Santiago\Desktop\Python\Entregable-Final-Bua-Camaros-Cavallo\ProyectoFinal\ProyectoFinalApp\templates\index.html",
+        "index.html",
     )
 
 
@@ -21,14 +21,14 @@ def agregar_inicial(request):
 
         curso1 = FormularioInicial(request.POST)
 
-        if FormularioInicial.is_valid():
+        if curso1.is_valid():
 
             informacion = curso1.cleaned_data
 
             curso1 = ClaseInicial(
                 nombre1_clase=informacion["nombre1_form"],
                 apellido1_clase=informacion["apellido1_form"],
-                emails1_clase=informacion["email1_form"],
+                email1_clase=informacion["email1_form"],
                 celular1_clase=informacion["celular1_form"],
             )
 
@@ -39,7 +39,7 @@ def agregar_inicial(request):
     else:
         curso1 = FormularioInicial()
 
-    return render(request, "formulario_inicial.html", {"form": FormularioInicial})
+    return render(request, "formulario_inicial.html", {"form": curso1})
 
 
 def agregar_intermedio(request):
@@ -55,7 +55,7 @@ def agregar_intermedio(request):
             curso2 = ClaseIntermedia(
                 nombre2_clase=informacion["nombre2_form"],
                 apellido2_clase=informacion["apellido2_form"],
-                emails2_clase=informacion["email2_form"],
+                email2_clase=informacion["email2_form"],
                 celular2_clase=informacion["celular2_form"],
             )
 
@@ -82,7 +82,7 @@ def agregar_avanzado(request):
             curso3 = ClaseAvanzada(
                 nombre3_clase=informacion["nombre3_form"],
                 apellido3_clase=informacion["apellido3_form"],
-                emails3_clase=informacion["email3_form"],
+                email3_clase=informacion["email3_form"],
                 celular3_clase=informacion["celular3_form"],
             )
 
