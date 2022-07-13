@@ -10,4 +10,11 @@ urlpatterns = [
     path("agregarintermedio/", views.agregar_intermedio, name="intermedio"),
     path("agregaravanzado/", views.agregar_avanzado, name="avanzado"),
     path("inscribite/", views.inscripcion, name="inscripcion"),
+    path("cursoinicial/", views.inicial_descripcion, name="inicial_des"),
+    path("cursointermedio/", views.intermedio_descripcion, name="intermedio_des"),
+    path("cursoavanzado/", views.avanzado_descripcion, name="avanzado_des"),
+    path("sobrenosotros/", views.sobre_nosotros, name="sobre_nos"),
+    path("login/", views.login_request, name="get_login"),
+    path("registrate/", views.register_request, name="get_register"),
+    path("logout/", views.logout, name="get_logout"),
 ]
