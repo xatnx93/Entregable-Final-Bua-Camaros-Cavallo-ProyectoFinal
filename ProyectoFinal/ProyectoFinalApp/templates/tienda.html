@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+
+
+<form action="" method="post">
+  {% csrf_token %}
+  <button class="polaroid" style="background-color:white; border:none">
+    <div>
+    
+            {% for item in itemsitos  %}
+                <h2>{{ itemsitos.titulo_form }}</h2>
+            {% endfor %}
+             
+            <input type="submit" value="Comprar">
+    </div>
+  </button>
+</form>
+
+
+{% endblock %}
+
+<!-- No anda todavia. -->

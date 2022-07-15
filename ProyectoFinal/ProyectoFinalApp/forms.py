@@ -43,3 +43,10 @@ class UserRegisterForm(UserCreationForm):
         fields = ["username", "email", "password1", "password2"]
 
         help_texts = {k: "" for k in fields}
+
+
+class ItemForm(forms.Form):
+    titulo_form = forms.CharField(max_length=50)
+    marca_form = forms.CharField(max_length=20)
+    imagen_form = forms.ImageField()
+    precio_form = forms.DecimalField(max_digits=9, decimal_places=2)

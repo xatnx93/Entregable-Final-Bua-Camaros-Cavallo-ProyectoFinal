@@ -5,3 +5,4 @@ from .models import *
 admin.site.register(ClaseInicial)
 admin.site.register(ClaseIntermedia)
 admin.site.register(ClaseAvanzada)
+admin.site.register(Items)

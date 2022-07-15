@@ -1,8 +1,14 @@
 from django.shortcuts import redirect, render
 from ProyectoFinalApp.models import *
 from ProyectoFinalApp.forms import *
-from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth import login, logout as django_logout, authenticate
+from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm
+from django.contrib.auth import (
+    login,
+    logout as django_logout,
+    authenticate,
+    update_session_auth_hash,
+)
+from django.contrib import messages
 
 
 def inicio(request):
@@ -176,3 +182,61 @@ def logout(request):
     django_logout(request)
 
     return redirect("inicio")
+
+
+def user_info(request):
+
+    return render(request, "user.html", {})
+
+
+def change_password(request):
+
+    if request.method == "POST":
+
+        form = PasswordChangeForm(request.user, request.POST)
+
+        if form.is_valid():
+
+            user = form.save()
+
+            update_session_auth_hash(request, user)
+            messages.success(request, "Cambiaste tu password!")
+
+            return redirect("inicio")
+
+        else:
+
+            messages.error(request, "Por favor, corregi el error.")
+
+    else:
+
+        form = PasswordChangeForm(request.user)
+
+    return render(request, "change_password.html", {"form": form})
+
+
+def store(request):
+
+    if request.method == "POST":
+
+        itemsitos = ItemForm(request.POST)
+
+        if itemsitos.is_valid():
+
+            informacion = itemsitos.cleaned_data
+
+            itemsitos = Items(
+                titulo=informacion["titulo_form"],
+                marca=informacion["marca_form"],
+                imagen=informacion["imagen_form"],
+                precio=informacion["precio_form"],
+            )
+
+            itemsitos.save()
+
+            return render(request, "index.html")
+
+    else:
+        itemsitos = FormularioIntermedio()
+
+    return render(request, "tienda.html", {"form": itemsitos})

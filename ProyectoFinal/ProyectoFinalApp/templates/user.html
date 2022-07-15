@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+{% block contenidoQueCambia %}
+
+<section class="bg-light py-5">
+    <div class="container px-5">
+        <b><u>Hola, <b>{{user.username}}</u></b>
+        <p></p>
+        <p>Esta es tu info:</p>
+        <p>Email: {{user.email}}</p>
+        <p><button><a class="nav-link" href="{% url 'cambio_password' %}">Cambiar Password</button></a></p>
+    </div>
+</section>
+
+{% endblock %}
+
+<!-- Todavia no muestra el user email. -->
