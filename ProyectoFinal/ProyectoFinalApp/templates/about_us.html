@@ -1,33 +1,43 @@
 {% extends "base.html" %}
 {% load static %}
 {% block contenidoQueCambia %}
+<header class="py-5 bg-image-full" style="background-image: url('https://images.pexels.com/photos/1595244/pexels-photo-1595244.jpeg')">
 <section class="py-5">
     <div class="container my-5">
         <div class="row justify-content-center">
             <div class="col-lg-6">
-                <p class="lead">Somos un grupo de amigos que nos conocemos desde jardin. Debajo vamos a detallar un poco de historia de cada uno:<br></p>
+                <h1><p class="" style="color:beige;"><strong>Somos un grupo de amigos que nos conocemos desde jardin. Debajo vamos a detallar un poco de historia de cada uno:</strong></h1>
 
 <br></br>
-<span style="font-family:arial,helvetica,sans-serif; font-size:20px">Santiago Bua</span><br>
-Actualmente trabajando en ASAPP de Service Desk.<br>
-Vicioso al borde de la enfermedad causante por los videojuegos.<br>
-Profesional gastronomico por hobbie.<br>
-Estoy interesado en el curso de Python ya que creo va a potenciar mis posibilidades laborales actuales y a futuro.<br>
-
-<br></br>
-<span style="font-family:arial,helvetica,sans-serif; font-size:20px">Hernan Camaros</span><br>
-Fotografo freelance.<br>
-Me gusta tocar la batería, jugar videojuegos y mirar series/peliculas.<br>
-Curso de musculacion deportiva.<br>
-Despues del curso pretendo trabajar de esto para poder mejorar mi situacion economica.<br>
-
-<br></br>
-<span style="font-family:arial,helvetica,sans-serif; font-size:20px">Lucio Cavallo</span><br>
-Administrativo contable, sonidista/productor.<br> 
-Usualmente disfruto de tocar la guitarra, el bajo, ir al cine y mirar series.<br>
-Agente de propaganda médica y técnico en sonido.<br>
-Empecé este curso porque me empezó a interesar la tecnología y la programación para el día de mañana poder hacer mis propias páginas y plugins de diseño de sonido, y me interesa cambiar mi vida laboral y economica<br>
+<span style="font-family:arial,helvetica,sans-serif; font-size:20px; color:white;"><b></v><u>Santiago Bua</u></b></span><br>
+<p style="color:white;">Actualmente trabajando en ASAPP de Service Desk.
+Vicioso al borde de la enfermedad causante por los videojuegos.
+Profesional gastronomico por hobbie.
+Estoy interesado en el curso de Python ya que creo va a potenciar mis posibilidades laborales actuales y a futuro.</p><br>
+<img class="img-responsive center-block" src="{% static 'santi.jpg' %}" alt="Santi" width="200" />
 <br></br>
 
 
+<br></br>
+<span style="font-family:arial,helvetica,sans-serif; font-size:20px; color:white;"><b><u>Lucio Cavallo</u></b></span><br>
+<p style="color:white;">Administrativo contable, sonidista/productor.
+Usualmente disfruto de tocar la guitarra, el bajo, ir al cine y mirar series.
+Agente de propaganda médica y técnico en sonido.
+Empecé este curso porque me empezó a interesar la tecnología y la programación para el día de mañana poder hacer mis propias páginas y plugins de diseño de sonido, y me interesa cambiar mi vida laboral y economica</p><br>
+<img class="img-responsive center-block" src="{% static 'lucho.jpg' %}" alt="Lucio" width="200" />
+<br></br>
+
+
+<br></br>
+<span style="font-family:arial,helvetica,sans-serif; font-size:20px; color:white;"><b><u>Hernan Camaros</u></b></span><br>
+<p style="color:white;">Fotografo freelance.
+Me gusta tocar la batería, jugar videojuegos y mirar series/peliculas.
+Curso de musculacion deportiva.
+Despues del curso pretendo trabajar de esto para poder mejorar mi situacion economica.</p><br>
+<img class="img-responsive center-block" src="{% static 'herno.jpg' %}" alt="Hernan" width="200" />
+
+
+<br></br>
+<br></br>
+</header>
 {% endblock %}

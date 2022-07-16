@@ -25,8 +25,8 @@ class ClaseAvanzada(models.Model):
 class Items(models.Model):
     titulo = models.CharField(max_length=50)
     marca = models.CharField(max_length=20)
-    imagen = models.ImageField()
+    imagen = models.ImageField(upload_to="media/")
     precio = models.DecimalField(max_digits=9, decimal_places=2)
 
     def __str__(self):
-        return str(self.titulo) + str(self.marca) + self.imagen + str(self.price)
+        return self.imagen

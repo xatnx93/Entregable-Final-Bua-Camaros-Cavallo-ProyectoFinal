@@ -217,26 +217,33 @@ def change_password(request):
 
 def store(request):
 
-    if request.method == "POST":
+    itemsitos = Items.objects.all()
 
-        itemsitos = ItemForm(request.POST)
+    return render(request, "tienda.html", {"itemsitos": itemsitos})
 
-        if itemsitos.is_valid():
 
-            informacion = itemsitos.cleaned_data
+# def store(request):
 
-            itemsitos = Items(
-                titulo=informacion["titulo_form"],
-                marca=informacion["marca_form"],
-                imagen=informacion["imagen_form"],
-                precio=informacion["precio_form"],
-            )
+#     if request.method == "GET":
 
-            itemsitos.save()
+#         itemsitos = ItemForm(request.GET)
 
-            return render(request, "index.html")
+#         if itemsitos.is_valid():
 
-    else:
-        itemsitos = FormularioIntermedio()
+#             informacion = itemsitos.cleaned_data
 
-    return render(request, "tienda.html", {"form": itemsitos})
+#             itemsitos = Items(
+#                 titulo=informacion["titulo_form"],
+#                 marca=informacion["marca_form"],
+#                 imagen=informacion["imagen_form"],
+#                 precio=informacion["precio_form"],
+#             )
+
+#             itemsitos.save()
+
+#             return render(request, "index.html")
+
+#     else:
+#         itemsitos = FormularioIntermedio()
+
+#     return render(request, "tienda.html", {"form": itemsitos})

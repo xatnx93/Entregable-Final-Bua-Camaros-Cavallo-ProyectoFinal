@@ -2,16 +2,20 @@
 {% load static %}
 {% block contenidoQueCambia %}
 
-
-<form action="" method="post">
-  {% csrf_token %}
   <button class="polaroid" style="background-color:white; border:none">
-    <div>
-    
-            {% for item in itemsitos  %}
-                <h2>{{ itemsitos.titulo_form }}</h2>
+    <div class="container">
+            <br></br>
+            <br></br>
+            {% for item in itemsitos %}
+                {{ item.titulo }}<br>
+                {{ item.marca }}<br>
+                <td><img src="{% get_media_prefix %}NikonTest1.png" width="300" alt=""></td><br>
+                {{ item.precio }}<br>
             {% endfor %}
-             
+            <br></br>
+            <br></br>
+            <br></br>
+
             <input type="submit" value="Comprar">
     </div>
   </button>
@@ -20,4 +24,4 @@
 
 {% endblock %}
 
-<!-- No anda todavia. -->
+<!-- XXXXX -->
