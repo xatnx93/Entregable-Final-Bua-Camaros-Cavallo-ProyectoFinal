@@ -1,18 +1,21 @@
 {% extends "base.html" %}
 {% load static %}
 {% block contenidoQueCambia %}
-
-<section class="bg-light py-5">
+<header class="py-5 bg-image-full" style="background-image: url('https://images.pexels.com/photos/832811/pexels-photo-832811.jpeg')">
     <div class="container px-5">
-        <b><u>Hola, <b>{{user.username}}</u></b>
+        <br></br>
+        <b style="color:white;"><u><h2>Hola, <b>{{user.username}}</u></b></h2>
         <p></p>
-        <p>Esta es tu info:</p>
-        <p>Nombre de usuario: {{user.username}}</p>
-        <p>Email: {{user.email}}</p>
-
-        Quieres recuperar tu contraseña?
+        <p style="color:white;">Esta es tu info:</p>
+        <p style="color:white;">Nombre de usuario: {{user.username}}</p>
+        <p style="color:white;">Email: {{user.email}}</p>
+        <br></br>
+        <p style="color:white;">Quieres recuperar tu contraseña?</p>
+        <p></p>
         <p><button><a class="nav-link" href="{% url 'cambio_password' %}">Cambiar Password</button></a></p>
     </div>
 </section>
+<br></br>
+<br></br>
 
 {% endblock %}
