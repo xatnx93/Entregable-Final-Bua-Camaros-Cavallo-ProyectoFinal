@@ -7,15 +7,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscripcion Avanzado</title>
+<header class="py-5 bg-image-full" style="background-image: url('https://images.pexels.com/photos/2925322/pexels-photo-2925322.jpeg')">
+    <title style="color:white;">Inscripcion Avanzado</title>
 </head>
 <body>
-    <h2>Inscripcion al curso Avanzado:</h2>
+    <h2 style="color:white;">Inscripcion al curso Avanzado:</h2>
     <p></p>
-    <h4>Dejanos tus datos y nos contactaremos:</h4>
+    <h4 style="color:white;">Dejanos tus datos y nos contactaremos:</h4>
     <p></p>
     <p></p>
-    <form action = "" method="POST">
+    <form action = "" method="POST" style="color:white;">
         {% csrf_token %}
 
         <table>
@@ -23,10 +24,10 @@
         {{ form.as_table }}
         
         </table>    
-
+        <br></br>  
         <input type="submit" value="Submit">
     </form>
-
+</header>
 </body>
 </html>
 {% endblock %}
