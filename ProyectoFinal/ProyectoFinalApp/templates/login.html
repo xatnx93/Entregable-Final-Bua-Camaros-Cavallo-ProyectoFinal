@@ -1,24 +1,16 @@
 {% extends "base.html" %}
 {% load static %}
 {% block contenidoQueCambia %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<br></br>
-<section class="bg-light py-5">
+<section class="py-5 bg-image-full" style="background-image: url('https://images.pexels.com/photos/8839157/pexels-photo-8839157.jpeg')">
     <div class="container px-5">
-        <b><u>Inicia sesion:</u></b>
+        <b style="color:white;"><u>Inicia sesion:</u></b>
         <p></p>
-        <form action="" method="POST">
+        <form action="" method="POST" style="color:white;">
             {% csrf_token %}
             {{form.as_p}}
             <button type="submit">Iniciar Sesion</button>
         </form>
     </div>
 </section>
-<br></br>
 
 {% endblock %}

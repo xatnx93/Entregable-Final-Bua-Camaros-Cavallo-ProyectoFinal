@@ -49,4 +49,5 @@ class ItemForm(forms.Form):
     titulo_form = forms.CharField(max_length=50)
     marca_form = forms.CharField(max_length=20)
     imagen_form = forms.ImageField()
-    precio_form = forms.DecimalField(max_digits=9, decimal_places=2)
+    precio_form = forms.DecimalField(max_digits=9, decimal_places=0)
+    url_form = models.URLField(max_length=250)

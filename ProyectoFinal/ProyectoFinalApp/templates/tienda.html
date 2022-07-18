@@ -1,26 +1,20 @@
 {% extends "base.html" %}
 {% load static %}
 {% block contenidoQueCambia %}
-
-  <button class="polaroid" style="background-color:white; border:none">
-    <div class="container">
-            <br></br>
-            <br></br>
+<header class="py-5 bg-image-full" style="background-image: url('https://images.pexels.com/photos/7430405/pexels-photo-7430405.jpeg')">
+  <div class="container my-5">
             {% for item in itemsitos %}
-                {{ item.titulo }}<br>
-                {{ item.marca }}<br>
-                <td><img src="{% get_media_prefix %}NikonTest1.png" width="300" alt=""></td><br>
-                {{ item.precio }}<br>
+              <p class="lead" style="color:white;"><b>{{ item.titulo }}<p></b>
+              <p class="lead" style="color:white;">{{ item.marca }}<p>
+              <img src="{% get_media_prefix %}{{ item.imagen }}" width="300" alt=""><p>
+              <p class="lead" style="color:white;"><b>$ {{ item.precio }}<p></b>
+              <a href="{{ item.url_model }}">
+              <input type="button" value="Mas Info">
+              </a>
+            <br></br>
             {% endfor %}
-            <br></br>
-            <br></br>
-            <br></br>
-
-            <input type="submit" value="Comprar">
-    </div>
-  </button>
-</form>
-
+  </div>
+</header>
 
 {% endblock %}
 
